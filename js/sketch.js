@@ -1,10 +1,11 @@
 //Global Variables
-var owlBodyX, owlBodyY, owlBodyHeight, owlBodyWidth, bodyFill;
-
+var owlBodyX, owlBodyY, owlBodyHeight, owlBodyWidth;
+var canvasWidth = 800;
+var canvasHeight = canvasWidth - 450;
 
 
 function setup() {
-    var canvas = createCanvas(800, 350);
+    var canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent("p5container");
 }
 
@@ -12,34 +13,72 @@ function draw() {
 
   //initialising variables that affect all of the drawn owl shapes
   //x,y poisition:
-  owlBodyX = width / 2
-  owlBodyY = height / 2
+  //owlBodyX = width / 2
+  //owlBodyY = height / 2
+  //owlBody X and Y with mouse track
+  var owlBodyX = map(mouseX, 0, canvasWidth, 190, 500);
+  var owlBodyY = map(mouseY, 0, canvasWidth, 100, 550);
   // height, width:
-  owlBodyWidth = 150
-  owlBodyHeight = owlBodyWidth + 50
+  owlBodyWidth = 150;
+  owlBodyHeight = owlBodyWidth + 50;
 
   //console.log(mouseX, mouseY)
    
 	background(10,20,67);
 
-  //Tree
-  fill(66,32,5);
-  stroke(0);
-  strokeWeight(4);
-  rect(300,1,250,500);
+  //Background images (stars, tree, moon)
+   //Tree
+    fill(66,32,5);
+    stroke(0);
+    strokeWeight(4);
+    rect(300,1,250,500);
   
-  //Hole
-  fill(0)  
-  ellipse(425,180,175,300);
+   //TreeHole
+    fill(0)  
+    ellipse(425,180,175,300);
+
+    //stars
+    fill(205);
+    stroke(255);
+    strokeWeight(2);
+    ellipse(100,100,2,2);
+    ellipse(150,170,2,2);
+    ellipse(130,210,2,2);
+    ellipse(50,300,2,2);
+    ellipse(280,270,2,2);
+    ellipse(250,300,2,2);
+    ellipse(20,70,2,2);
+    ellipse(150,20,2,2);
+    ellipse(280,40,2,2);
+    ellipse(260,90,2,2);
+    ellipse(650,170,2,2);
+    ellipse(750,270,2,2);
+    ellipse(650,250,2,2);
+    ellipse(690,70,2,2);
+    ellipse(150,170,2,2);
+    ellipse(620,20,2,2);
+    ellipse(580,270,2,2);
+    ellipse(597,80,2,2);
+    
+    //moon
+    stroke(256);
+    strokeWeight(3);
+    fill(252,252,227)
+    ellipse(60,50,90,90);
+    
+    fill(10,20,67);
+    noStroke();
+    ellipse(80,60,90,90);
   
+
+  //Owl
+
   //Wings
-  
+  stroke(0);
   fill(229,196,165);
   ellipse(owlBodyX - 13, owlBodyY + 45, owlBodyWidth - 60, owlBodyHeight - 20,);
-  //ellipse(387,220,90,180);
-  
-  fill(229,196,165);
-  ellipse(owlBodyX + 63, owlBodyY + 45, owlBodyWidth - 60, owlBodyHeight - 20,);                                                                                                                                                                           ellipse(463,220,90,180);
+  ellipse(owlBodyX + 63, owlBodyY + 45, owlBodyWidth - 60, owlBodyHeight - 20,); 
+  //ellipse(387,220,90,180);                                                                                                                                                                         ellipse(463,220,90,180);
 
     
   //body
@@ -61,8 +100,8 @@ function draw() {
   noStroke();
   fill(119,70,39);
   ellipse(owlBodyX - 5, owlBodyY - 55, owlBodyWidth - 50, owlBodyHeight - 100,);
-  //ellipse(395,120,100,100);
   noStroke;
+  //ellipse(395,120,100,100);
   
   //Head right
   noStroke();
@@ -74,12 +113,12 @@ function draw() {
   
   stroke(119,70,39); 
   strokeWeight(25);
-  line(owlBodyX - 60, owlBodyY - 105, owlBodyX + 20, owlBodyY - 95)
+  line(owlBodyX - 60, owlBodyY - 105, owlBodyX + 20, owlBodyY - 95);
   //line(340,70,420,80);
   
   stroke(119,70,39);
   strokeWeight(25);
-  line(owlBodyX + 100, owlBodyY - 105, owlBodyX + 20, owlBodyY - 95)
+  line(owlBodyX + 100, owlBodyY - 105, owlBodyX + 20, owlBodyY - 95);
   //line(500,70,420,80);
   
   
@@ -91,6 +130,7 @@ function draw() {
   ellipse(owlBodyX - 8, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
   //ellipse(392,119,50,60);
 
+  //eye pupil
   stroke(1);
   strokeWeight(00);
   fill(0);
@@ -104,6 +144,7 @@ function draw() {
   ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
   //ellipse(449,119,50,60);
   
+  //eye pupil
   stroke(1);
   strokeWeight(0);
   fill(0);
@@ -128,38 +169,7 @@ function draw() {
   triangle (owlBodyX + 5, owlBodyY - 25, owlBodyX + 35, owlBodyY - 25, owlBodyX + 20, owlBodyY - 5 );
   //triangle(405,150,435,150,420,170);
   
-  //stars
-  fill(205);
-  stroke(255);
-  strokeWeight(2);
-  ellipse(100,100,2,2);
-  ellipse(150,170,2,2);
-  ellipse(130,210,2,2);
-  ellipse(50,300,2,2);
-  ellipse(280,270,2,2);
-  ellipse(250,300,2,2);
-  ellipse(20,70,2,2);
-  ellipse(150,20,2,2);
-  ellipse(280,40,2,2);
-  ellipse(260,90,2,2);
-  ellipse(650,170,2,2);
-  ellipse(750,270,2,2);
-  ellipse(650,250,2,2);
-  ellipse(690,70,2,2);
-  ellipse(150,170,2,2);
-  ellipse(620,20,2,2);
-  ellipse(580,270,2,2);
-  ellipse(597,80,2,2);
-  
-  //moon
-  stroke(256);
-  strokeWeight(3);
-  fill(252,252,227)
-  ellipse(60,50,90,90);
-  
-  fill(10,20,67);
-  noStroke();
-    ellipse(80,60,90,90);
+
 
   
   
