@@ -16,7 +16,7 @@ function draw() {
   //owlBodyX = width / 2
   //owlBodyY = height / 2
   //owlBody X and Y with mouse track
-  var owlBodyX = map(mouseX, 0, canvasWidth, 190, 700);
+  var owlBodyX = map(mouseX, 0, canvasWidth, 190, 800);
   var owlBodyY = map(mouseY, 0, canvasWidth, 100, 550);
   // height, width:
   owlBodyWidth = 150;
