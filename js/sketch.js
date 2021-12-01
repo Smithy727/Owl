@@ -140,6 +140,25 @@ function draw() {
   ellipse(owlBodyX - 8, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
   //ellipse(392,119,50,60);
 
+        //blink left eye
+        if (mouseX > width-750 && mouseX <width-720){
+          fill (0)
+          stroke(0);
+          strokeWeight(5);
+          fill(119,70,39);
+          ellipse(owlBodyX - 8, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
+        }
+        else {
+          stroke(255);
+          strokeWeight(10);
+          fill(67,199,232);
+          ellipse(owlBodyX - 8, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
+            //Right eye pupil
+          stroke(1);
+          strokeWeight();
+          fill(0);
+          ellipse(owlBodyX - 8, owlBodyY - 56, owlBodyWidth - 130, owlBodyHeight - 170,);
+
     //Left eye pupil
     stroke(1);
     strokeWeight();
@@ -147,8 +166,8 @@ function draw() {
     ellipse(owlBodyX - 8, owlBodyY - 56, owlBodyWidth - 130, owlBodyHeight - 170,);
     //ellipse(392,119,20,30);
 
-      //blink Left eye
-      if (mouseX <width/2 && mouseX > width/3 && mouseY <height/2){
+      //eye close center
+      if (mouseX >width/3 && mouseX <width-300){
         fill (0)
         stroke(0);
         strokeWeight(5);
@@ -162,27 +181,27 @@ function draw() {
         ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
       }
 
+      }
 
-  
+
+  //Right eye pupil
+  stroke(1);
+  strokeWeight();
+  fill(0);
+  ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 130, owlBodyHeight - 170,);
+  //ellipse(392,119,20,30);
+
+
   //Right eyes
   stroke(255);
   strokeWeight(10);
   fill(67,199,232);
   ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
   //ellipse(449,119,50,60);
-
-
-    //Right eye pupil
-
-    stroke(1);
-    strokeWeight();
-    fill(0);
-    ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 130, owlBodyHeight - 170,);
-    //ellipse(392,119,20,30);
-
+  
     
-    //blink right eye
-    if (mouseX <width/2 && mouseX > width/5){
+    //eye closed center    
+    if (mouseX >width/3 && mouseX <width-300) {
       fill (0)
       stroke(0);
       strokeWeight(5);
@@ -195,14 +214,27 @@ function draw() {
       fill(67,199,232);
       ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
 
+          
+
+      //blink
+      if (mouseX > width-750 && mouseX <width-700){
+        fill (0)
+        stroke(0);
+        strokeWeight(5);
+        fill(119,70,39);
+        ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
+      }
+      else {
+        stroke(255);
+        strokeWeight(10);
+        fill(67,199,232);
+        ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 100, owlBodyHeight - 140,);
           //Right eye pupil
-
-    stroke(1);
-    strokeWeight();
-    fill(0);
-    ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 130, owlBodyHeight - 170,);
-      
-
+        stroke(1);
+        strokeWeight();
+        fill(0);
+        ellipse(owlBodyX + 49, owlBodyY - 56, owlBodyWidth - 130, owlBodyHeight - 170,);
+      }
     }
 
 
